@@ -9,8 +9,13 @@ Redis store ready to scale with node-pool support
 
     npm install simple-redis-pool
 
-    var RedisStore = require("simple-redis-pool");
-    var store = new RedisStore();
+    var RedisPool = require("simple-redis-pool");
+    var pool = new RedisPool();
 
     // set
-    store.set("key", "value");
+    pool.acquire(function (err, conn) {
+      if (err) {
+        throw err;
+      }
+      return conn;
+    });
