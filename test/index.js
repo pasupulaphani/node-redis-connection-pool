@@ -1,21 +1,22 @@
 require("should");
-var RedisPool = require("../lib/redis_pool");
+const RedisPool = require("../lib/redis_pool");
 
-describe("redisPool", function () {
+describe("redisPool", () => {
 
-  var redisPool = new RedisPool("testPool");
+  const redisOptions = Object.assign({
+    host: process.env.REDIS_HOST || "127.0.0.1"
+  });
+  const pool = new RedisPool("testPool", redisOptions);
 
-  describe("acquire", function () {
+  describe("acquire", () => {
 
-    it("get", function (done) {
+    it("should acquire connection", (done) => {
 
-      redisPool.acquire(function (err, conn) {
-        if (err) {
-          throw err;
-        }
-        conn.should.be.ok();
-        done();
-      });
+      pool.acquire()
+        .then(conn => {
+          conn.should.be.ok();
+          done();
+        });
     });
   });
 });

@@ -1,9 +1,17 @@
-[![Build Status](https://travis-ci.org/pasupulaphani/angular-gist-embed.svg?branch=master)](https://travis-ci.org/pasupulaphani/angular-gist-embed) [![npm version](https://badge.fury.io/js/simple-redis-pool.svg)](https://badge.fury.io/js/simple-redis-pool) [![Test Coverage](https://codeclimate.com/github/pasupulaphani/simple-redis-pool/badges/coverage.svg)](https://codeclimate.com/github/pasupulaphani/simple-redis-pool/coverage) [![Code Climate](https://codeclimate.com/github/pasupulaphani/simple-redis-pool/badges/gpa.svg)](https://codeclimate.com/github/pasupulaphani/simple-redis-pool)
+[![npm version](http://img.shields.io/npm/v/simple-redis-pool.svg)](https://npmjs.org/package/simple-redis-pool)
+[![Build Status](https://travis-ci.org/pasupulaphani/simple-redis-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/simple-redis-pool)
+[![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/simple-redis-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/simple-redis-pool?branch=master)
+[![dependencies Status](https://david-dm.org/pasupulaphani/simple-redis-pool/status.svg)](https://david-dm.org/pasupulaphani/simple-redis-pool)
+[![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg)](https://gratipay.com/simple-redis-store/)
 
 # simple-redis-pool
 Redis store ready to scale with node-pool support
 
-> Note: This lib is still in alpha
+> Note: This lib is in beta
+
+## Prerequisites
+
+This module requires nodejs v4 or above as it has dependencies on constious es6 components such as Map, Set, Promise etc.
 
 ### Getting started
 
@@ -13,9 +21,11 @@ Redis store ready to scale with node-pool support
     var pool = new RedisPool();
 
     // set
-    pool.acquire(function (err, conn) {
-      if (err) {
-        throw err;
-      }
-      return conn;
-    });
+    pool.acquire()
+      .then(conn = {
+          // Go get 'em tiger!
+        });
+
+### Run tests
+
+    bash test.sh

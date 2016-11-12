@@ -1,7 +1,7 @@
 {
   "name": "simple-redis-pool",
-  "version": "0.0.1",
-  "description": "Redis pool ready to scale with connection pool support",
+  "version": "1.0.0",
+  "description": "Simplistic cache module that can scale",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,9 +10,15 @@
   "engines": {
     "node": "*"
   },
-  "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+  "bugs": {
+    "url": "https://github.com/pasupulaphani/simple-redis-pool/issues"
   },
+  "homepage": "https://github.com/pasupulaphani/simple-redis-pool#readme",
+  "directories": {
+    "test": "test"
+  },
+  "author": "pasupulaphani@gmail.com",
+  "license": "WTFPL",
   "keywords": [
     "redis",
     "cache",
@@ -20,23 +26,24 @@
     "connection",
     "pool"
   ],
-  "author": "pasupulaphani@gmail.com",
-  "license": "WTFPL",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint ./lib",
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
   "dependencies": {
     "bluebird": "^3.4.6",
     "debug": "^2.2.0",
-    "generic-pool": "^2.4.2",
+    "generic-pool": "^3.1.1",
     "redis": "^2.6.2"
   },
   "devDependencies": {
+    "coveralls": "^2.11.14",
+    "eslint": "^3.9.1",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.0",
+    "mocha-lcov-reporter": "^1.2.0",
     "should": "^11.1.0"
-  },
-  "bugs": {
-    "url": "https://github.com/pasupulaphani/simple-redis-pool/issues"
-  },
-  "homepage": "https://github.com/pasupulaphani/simple-redis-pool#readme",
-  "directories": {
-    "test": "test"
   }
 }
