@@ -20,8 +20,11 @@ This module requires nodejs v4 or above as it has dependencies on constious es6 
     var RedisPool = require("simple-redis-pool");
     var pool = new RedisPool();
 
-    // get connection
     pool.acquire()
-      .then(conn => {
-        // you are all set
-      });
+      .then(conn = {
+          // Go get 'em tiger!
+        });
+
+### Run tests
+
+    bash test.sh
