@@ -20,7 +20,11 @@ This module requires nodejs v4 or above as it has dependencies on constious es6 
 
     pool.acquire()
       .then(conn => {
-          // Go get 'em tiger!
+      
+          // Do some work
+          
+          // At the end release the conn back to the pool
+          pool.release(conn)
         });
 
 #### API
