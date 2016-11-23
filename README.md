@@ -5,7 +5,7 @@
 [![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg)](https://gratipay.com/simple-redis-store/)
 
 # simple-redis-pool
-Redis cache ready to scale with node-pool support
+Redis pool ready to scale with node-pool support
 
 ## Prerequisites
 
