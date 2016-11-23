@@ -7,8 +7,6 @@
 # simple-redis-pool
 Redis cache ready to scale with node-pool support
 
-> Note: This lib is in beta
-
 ## Prerequisites
 
 This module requires nodejs v4 or above as it has dependencies on constious es6 components such as Map, Set, Promise etc.
@@ -18,12 +16,22 @@ This module requires nodejs v4 or above as it has dependencies on constious es6 
     npm install simple-redis-pool
 
     var RedisPool = require("simple-redis-pool");
-    var pool = new RedisPool();
+    var pool = new RedisPool("myPool");
 
     pool.acquire()
       .then(conn = {
           // Go get 'em tiger!
         });
+
+#### API
+
+- RedisPool(name, redisOptions, poolOptions)
+
+arguments:
+
+1. name(String): name your pool
+2. redisOptions(Object): opts from https://github.com/NodeRedis/node_redis#options-object-properties
+3. poolOptions(Object): opts from https://github.com/coopernurse/node-pool#createpool
 
 ### Run tests
 
