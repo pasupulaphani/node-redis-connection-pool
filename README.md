@@ -19,7 +19,7 @@ This module requires nodejs v4 or above as it has dependencies on constious es6 
     var pool = new RedisPool("myPool");
 
     pool.acquire()
-      .then(conn = {
+      .then(conn => {
           // Go get 'em tiger!
         });
 
