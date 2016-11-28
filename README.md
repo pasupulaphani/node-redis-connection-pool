@@ -1,7 +1,7 @@
 [![npm version](http://img.shields.io/npm/v/simple-redis-pool.svg)](https://npmjs.org/package/simple-redis-pool)
 [![Build Status](https://travis-ci.org/pasupulaphani/simple-redis-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/simple-redis-pool)
 [![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/simple-redis-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/simple-redis-pool?branch=master)
-[![dependencies Status](https://david-dm.org/pasupulaphani/simple-redis-pool/status.svg)](https://david-dm.org/pasupulaphani/simple-redis-pool)
+[![Dependency Status](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c)
 [![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg)](https://gratipay.com/simple-redis-store/)
 
 # simple-redis-pool
@@ -20,9 +20,9 @@ This module requires nodejs v4 or above as it has dependencies on constious es6 
 
     pool.acquire()
       .then(conn => {
-      
+
           // Do some work
-          
+
           // At the end release the conn back to the pool
           pool.release(conn)
         });
