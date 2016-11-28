@@ -562,9 +562,9 @@ generate-object-property@^1.1.0:
   dependencies:
     is-property "^1.0.0"
 
-generic-pool@3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.1.2.tgz#432cb3dcc6fccb3a416b4a1297313faf53caf79f"
+generic-pool:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.1.4.tgz#38816268c374fd3aa731d5a1b9bde8fec4bcef92"
 
 getpass@^0.1.1:
   version "0.1.6"
