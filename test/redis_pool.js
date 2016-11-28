@@ -4,8 +4,10 @@ const RedisPool = require("../lib/redis_pool");
 
 describe("redisPool", () => {
 
-  const redisOptions = {
-    host: process.env.REDIS_HOST || "127.0.0.1"
+  const options = {
+    redisOptions: {
+      host: process.env.REDIS_HOST || "127.0.0.1"
+    }
   };
 
   describe("constructor", () => {
@@ -13,8 +15,11 @@ describe("redisPool", () => {
     it("should set db when sent as constructor option", () => {
 
       const redisDb = 1;
-      const pool = new RedisPool("testPool", Object.assign(redisOptions, {
+      const redisOptions = Object.assign({}, options.redisOptions, {
         db: redisDb
+      });
+      const pool = new RedisPool(Object.assign(options, {
+        redisOptions: redisOptions
       }));
 
       return pool.acquire(0)
@@ -27,7 +32,7 @@ describe("redisPool", () => {
 
     it("should acquire connection with valid host", () => {
 
-      const pool = new RedisPool("testPool", redisOptions);
+      const pool = new RedisPool(options);
 
       return pool.acquire()
         .should.eventually.be.ok();
@@ -35,7 +40,7 @@ describe("redisPool", () => {
 
     it("should acquire connection to db when set", () => {
 
-      const pool = new RedisPool("testPool", redisOptions);
+      const pool = new RedisPool(options);
       const db = 1;
 
       return pool.acquire(0, db)
@@ -48,7 +53,9 @@ describe("redisPool", () => {
         min: 0,
         max: 1
       };
-      const pool = new RedisPool("testPool", redisOptions, poolOptions);
+      const pool = new RedisPool(Object.assign({}, options, {
+        poolOptions: poolOptions
+      }));
 
       pool.availableObjectsCount().should.be.equal(poolOptions.min);
       pool.getPoolSize().should.be.equal(poolOptions.min);
@@ -80,9 +87,15 @@ describe("redisPool", () => {
     });
 
     it("should not acquire connection with invalid host", () => {
-      const pool = new RedisPool("testCache", {
+      const redisOptions = Object.assign({}, options.redisOptions, {
         host: "UNAVAILABLE_HOST"
       });
+      const pool = new RedisPool(Object.assign(options, {
+        redisOptions: redisOptions,
+        poolOptions: {
+          acquireTimeoutMillis: 50
+        }
+      }));
 
       return pool.acquire().should.be.rejected();
     });
@@ -94,7 +107,9 @@ describe("redisPool", () => {
       min: 2,
       max: 4
     };
-    const pool = new RedisPool("testPool", redisOptions, poolOptions);
+    const pool = new RedisPool(Object.assign({}, options, {
+      poolOptions: poolOptions
+    }));
 
     it("should release connection with valid host", () => {
 
@@ -117,7 +132,9 @@ describe("redisPool", () => {
       min: 2,
       max: 4
     };
-    const pool = new RedisPool("testPool", redisOptions, poolOptions);
+    const pool = new RedisPool(Object.assign({}, options, {
+      poolOptions: poolOptions
+    }));
 
     it("should destroy connection with valid host", () => {
 
@@ -135,13 +152,31 @@ describe("redisPool", () => {
     });
   });
 
+  describe("sendCommand", () => {
+
+    const key = "MyNameIs";
+    const value = "RealSlimShady";
+    const pool = new RedisPool(options);
+
+    before(() => pool.sendCommand("del", "*"));
+
+    it("should execute given command", () => {
+
+      return pool.sendCommand("set", [key, value])
+        .then(() => pool.sendCommand("get", [key]))
+        .should.eventually.be.equal(value);
+    });
+  });
+
   describe("drain", () => {
 
     const poolOptions = {
       min: 2,
       max: 4
     };
-    const pool = new RedisPool("testPool", redisOptions, poolOptions);
+    const pool = new RedisPool(Object.assign({}, options, {
+      poolOptions: poolOptions
+    }));
 
     it("should drain all the coonections", () => {
 
@@ -162,9 +197,18 @@ describe("redisPool", () => {
     it("should set given name", () => {
 
       const name = "testPool";
-      const pool = new RedisPool(name, redisOptions);
+      const pool = new RedisPool(Object.assign({}, options, {
+        name: name
+      }));
 
       pool.getName().should.be.equal(name);
+    });
+
+    it("should set random name if not set", () => {
+
+      const pool = new RedisPool(options);
+
+      pool.getName().should.not.be.empty();
     });
   });
 
@@ -172,10 +216,9 @@ describe("redisPool", () => {
 
     it("should set given redis options", () => {
 
-      const name = "testPool";
-      const pool = new RedisPool(name, redisOptions);
+      const pool = new RedisPool(options);
 
-      pool.getRedisOptions().should.be.equal(redisOptions);
+      pool.getRedisOptions().should.be.equal(options.redisOptions);
     });
   });
 
@@ -183,12 +226,13 @@ describe("redisPool", () => {
 
     it("should set given pool options", () => {
 
-      const name = "testPool";
       const poolOptions = {
         min: 2,
         max: 4
       };
-      const pool = new RedisPool(name, redisOptions, poolOptions);
+      const pool = new RedisPool(Object.assign({}, options, {
+        poolOptions: poolOptions
+      }));
 
       pool.getPoolOptions().should.be.equal(poolOptions);
     });
@@ -196,14 +240,17 @@ describe("redisPool", () => {
 
   describe("status", () => {
 
-    it("should set given pool options", () => {
+    it("should get pool stats", () => {
 
       const name = "testPool";
       const poolOptions = {
         min: 2,
         max: 4
       };
-      const pool = new RedisPool(name, redisOptions, poolOptions);
+      const pool = new RedisPool(Object.assign({}, options, {
+        name: name,
+        poolOptions: poolOptions
+      }));
 
       const status = pool.status();
       status.name.should.be.equal(name);
