@@ -91,13 +91,10 @@ describe("redisPool", () => {
         host: "UNAVAILABLE_HOST"
       });
       const pool = new RedisPool(Object.assign(options, {
-        redisOptions: redisOptions,
-        poolOptions: {
-          acquireTimeoutMillis: 50
-        }
+        redisOptions: redisOptions
       }));
 
-      return pool.acquire().should.be.rejected();
+      return pool.acquire().should.be.rejectedWith(Error, { message: "CONN_FAILED" });
     });
   });
 
