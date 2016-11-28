@@ -152,22 +152,6 @@ describe("redisPool", () => {
     });
   });
 
-  describe("sendCommand", () => {
-
-    const key = "MyNameIs";
-    const value = "RealSlimShady";
-    const pool = new RedisPool(options);
-
-    before(() => pool.sendCommand("del", "*"));
-
-    it("should execute given command", () => {
-
-      return pool.sendCommand("set", [key, value])
-        .then(() => pool.sendCommand("get", [key]))
-        .should.eventually.be.equal(value);
-    });
-  });
-
   describe("drain", () => {
 
     const poolOptions = {
