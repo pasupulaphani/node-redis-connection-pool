@@ -13,12 +13,18 @@ describe("sendCommand", () => {
   const value = "RealSlimShady";
   const pool = new RedisPool(options);
 
-  before(() => pool.sendCommand("del", "*"));
+  beforeEach(() => pool.sendCommand("del", "*"));
 
   it("should execute given command", () => {
 
     return pool.sendCommand("set", [key, value])
       .then(() => pool.sendCommand("get", [key]))
       .should.eventually.be.equal(value);
+  });
+
+  it("should reject when cmd failed", () => {
+
+    return pool.sendCommand("keys")
+      .should.be.rejectedWith(/ERR wrong number of arguments for 'keys' command/);
   });
 });
