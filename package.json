@@ -30,7 +30,8 @@
     "lint": "node_modules/.bin/eslint ./lib",
     "test": "./node_modules/.bin/mocha --reporter spec",
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "docs": "./node_modules/.bin/jsdoc  --package package.json --readme README.md lib/ -d docs -v"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
@@ -44,6 +45,7 @@
     "coveralls": "^2.11.15",
     "eslint": "^3.11.1",
     "istanbul": "^0.4.5",
+    "jsdoc": "^3.4.3",
     "mocha": "^3.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "should": "^11.1.1"
