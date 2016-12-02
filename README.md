@@ -51,64 +51,44 @@ Redis pool ready to scale with node-pool support
   </thead>
   <tbody>
     <tr>
-      <td class="name"><code>options</code></td>
+      <td class="name"><code>name</code></td>
+      <td class="type">
+        <span class="param-type">String</span>
+      </td>
+      <td class="description last">
+        <p>Name your pool</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><code>redisOptions</code></td>
+      <td class="type">
+        <span class="param-type">String</span>
+      </td>
+      <td class="description last">
+        <p>opts from <a href="https://github.com/NodeRedis/node_redis#options-object-properties">node_redis#options-object-properties</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><code>poolOptions</code></td>
+      <td class="type">
+        <span class="param-type">String</span>
+      </td>
+      <td class="description last">
+        <p>opts from <a href="https://github.com/coopernurse/node-pool#createpool">node-pool#createpool</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><code>logger</code></td>
       <td class="type">
         <span class="param-type">Object</span>
       </td>
       <td class="description last">
-        <p>Accepts properties ["name", "redisOptions", "poolOptions", "logger"]</p>
-        <h6>Properties</h6>
-        <table class="params">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th class="last">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="name"><code>name</code></td>
-              <td class="type">
-                <span class="param-type">String</span>
-              </td>
-              <td class="description last">
-                <p>Name your pool</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="name"><code>redisOptions</code></td>
-              <td class="type">
-                <span class="param-type">String</span>
-              </td>
-              <td class="description last">
-                <p>opts from <a href="https://github.com/NodeRedis/node_redis#options-object-properties">node_redis#options-object-properties</a></p>
-              </td>
-            </tr>
-            <tr>
-              <td class="name"><code>poolOptions</code></td>
-              <td class="type">
-                <span class="param-type">String</span>
-              </td>
-              <td class="description last">
-                <p>opts from <a href="https://github.com/coopernurse/node-pool#createpool">node-pool#createpool</a></p>
-              </td>
-            </tr>
-            <tr>
-              <td class="name"><code>logger</code></td>
-              <td class="type">
-                <span class="param-type">Object</span>
-              </td>
-              <td class="description last">
-                <p>Inject your custom logger</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <p>Inject your custom logger</p>
       </td>
     </tr>
   </tbody>
 </table>
+
 
 ### Run tests
 
