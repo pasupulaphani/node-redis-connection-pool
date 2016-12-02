@@ -18,7 +18,7 @@ Redis pool ready to scale with node-pool support
 ```
     npm install simple-redis-pool
 ```
-<br />
+
 #### Usage
 ```
     var RedisPool = require("simple-redis-pool");
@@ -33,7 +33,7 @@ Redis pool ready to scale with node-pool support
           pool.release(conn)
         });
 ```
-<br />
+
 
 #### API
 
@@ -44,8 +44,8 @@ Redis pool ready to scale with node-pool support
 | Property  | Default   | Description |
 |-----------|-----------|-------------|
 | name      | Random unique string | Name your pool |
-| redisOptions      | ```{url: redis://127.0.0.1:6379}```      | opts from  https://github.com/NodeRedis/node_redis#options-object-properties |
-| poolOptions      | null      | opts from https://github.com/coopernurse/node-pool#createpool |
+| redisOptions      | ```{url: redis://127.0.0.1:6379}```      | opts from  [node_redis#options-object-properties](https://github.com/NodeRedis/node_redis#options-object-properties) |
+| poolOptions      | null      | opts from [node-pool#createpool](https://github.com/coopernurse/node-pool#createpool) |
 | logger       | null      | Inject your custom logger |
 
 ### Run tests
@@ -58,14 +58,13 @@ Redis pool ready to scale with node-pool support
 
 ## Backers
 
-<br />
-#### Maintainers
+### Maintainers
 
 These amazing people are maintaining this project:
 
 *   [Phani](https://github.com/pasupulaphani) — [view contributions](https://github.com/pasupulaphani/simple-redis-pool/commits?author=pasupulaphani)
 
-#### Sponsors
+### Sponsors
 
 No sponsors yet! Will you be the first?
 
@@ -76,7 +75,7 @@ No sponsors yet! Will you be the first?
 <!-- [![Bitcoin donate button](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://phaninder.com/bitcoin "Donate once-off to this project using Bitcoin") -->
 <!-- [![Wishlist browse button](https://img.shields.io/badge/wishlist-donate-yellow.svg)](https://phaninder.com/wishlist "Buy an item on our wishlist for us") -->
 
-#### Contributors
+### Contributors
 
 These amazing people have contributed to/reviewed this project:
 
