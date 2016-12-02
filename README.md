@@ -9,7 +9,7 @@ Redis pool ready to scale with node-pool support
 
 ## Prerequisites
 
-This module requires nodejs v4 or above as it has dependencies on constious es6 components such as Map, Set, Promise etc.
+```node >= 4``` This module requires nodejs v4 or above as it has dependencies on es6 components such as Map, Set, Promise etc.
 
 ### Getting started
 
