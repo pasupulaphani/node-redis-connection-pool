@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RedisPool.html">RedisPool</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RedisPool.html">RedisPool</a><ul class='methods'><li data-type='method'><a href="RedisPool.html#acquire">acquire</a></li><li data-type='method'><a href="RedisPool.html#availableObjectsCount">availableObjectsCount</a></li><li data-type='method'><a href="RedisPool.html#destroy">destroy</a></li><li data-type='method'><a href="RedisPool.html#drain">drain</a></li><li data-type='method'><a href="RedisPool.html#getName">getName</a></li><li data-type='method'><a href="RedisPool.html#getPoolOptions">getPoolOptions</a></li><li data-type='method'><a href="RedisPool.html#getPoolSize">getPoolSize</a></li><li data-type='method'><a href="RedisPool.html#getRedisOptions">getRedisOptions</a></li><li data-type='method'><a href="RedisPool.html#pendingClientsCount">pendingClientsCount</a></li><li data-type='method'><a href="RedisPool.html#release">release</a></li><li data-type='method'><a href="RedisPool.html#sendCommand">sendCommand</a></li><li data-type='method'><a href="RedisPool.html#status">status</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -74,11 +74,11 @@ const selectDB = function (client, db) {
 
 /**
  * @constructor
- * @param    {Object}   options - Accepts properties ["name", "redisOptions", "poolOptions", "logger"]
- * @param    {String}   options.name - Name your pool
- * @param    {Object}   options.redisOptions - opts from [node_redis#options-object-properties]{@link https://github.com/NodeRedis/node_redis#options-object-properties}
- * @param    {Object}   options.poolOptions - opts from [node-pool#createpool]{@link https://github.com/coopernurse/node-pool#createpool}
- * @param    {Object}   options.logger - Inject your custom logger
+ * @param    {object}   options - Accepts properties ["name", "redisOptions", "poolOptions", "logger"]
+ * @param    {string}   options.name - Name your pool
+ * @param    {object}   options.redisOptions - opts from [node_redis#options-object-properties]{@link https://github.com/NodeRedis/node_redis#options-object-properties}
+ * @param    {object}   options.poolOptions - opts from [node-pool#createpool]{@link https://github.com/coopernurse/node-pool#createpool}
+ * @param    {object}   options.logger - Inject your custom logger
  */
 const RedisPool = module.exports = function (options) {
 
@@ -149,6 +149,13 @@ const RedisPool = module.exports = function (options) {
   });
 };
 
+/**
+ * Send redis instructions
+ *
+ * @param {string} commandName - Name of the command
+ * @param {array}  commandArgs - Args sent to the command
+ * @returns {promise} Promise resolve with the result or Error
+ */
 RedisPool.prototype.sendCommand = function (commandName, commandArgs) {
   return this.pool.acquire()
     .then(conn => {
@@ -160,20 +167,26 @@ RedisPool.prototype.sendCommand = function (commandName, commandArgs) {
           conn.send_commandAsync(commandName, commandArgs) :
           conn.send_commandAsync(commandName)
       )
-        .then(result => {
-          this.pool.release(conn);
-          return result;
-        })
-        .catch(err => {
-          this.pool.release(conn);
-          this.logger.error("Errored send_command", err);
-          debug("Errored send_command", err);
-          throw err;
-        });
+      .then(result => {
+        this.pool.release(conn);
+        return result;
+      })
+      .catch(err => {
+        this.pool.release(conn);
+        this.logger.error("Errored send_command", err);
+        debug("Errored send_command", err);
+        throw err;
+      });
     });
 };
 
-// Acquire a database connection and use an optional priority.
+/**
+ * Acquire a Redis connection and use an optional priority.
+ *
+ * @param {number} priority - priority list number
+ * @param {number} db - Use the db with range {0-16}
+ * @returns {promise} Promise resolve with the connection or Error
+ */
 RedisPool.prototype.acquire = function (priority, db) {
   return this.pool.acquire(priority)
     .then(client => {
@@ -193,51 +206,100 @@ RedisPool.prototype.acquire = function (priority, db) {
     });
 };
 
-// Release a database connection to the pool.
+/**
+ * Release a Redis connection to the pool.
+ *
+ * @param {object} client - Redis connection
+ * @returns {promise} Promise
+ */
 RedisPool.prototype.release = function (client) {
   return this.pool.release(client);
 };
 
+/**
+ * Destroy a Redis connection.
+ *
+ * @param {object} client - Redis connection
+ * @returns {promise} Promise
+ */
 RedisPool.prototype.destroy = function (client) {
   return this.pool.destroy(client);
 };
 
-// Drains the connection pool and call the callback id provided.
+/**
+ * Drains the connection pool and call the callback id provided.
+ *
+ * @returns {promise} Promise
+ */
 RedisPool.prototype.drain = function () {
   return this.pool.drain(() => this.pool.clear());
 };
 
-// Returns factory.name for this pool
+/**
+ * Returns factory.name for this pool
+ *
+ * @returns {string} Name of the pool
+ */
 RedisPool.prototype.getName = function () {
   return this.name;
 };
 
+/**
+ * Returns this.redisOptions for this pool
+ *
+ * @returns {object} redis options given
+ */
 RedisPool.prototype.getRedisOptions = function () {
   return this.redisOptions;
 };
 
+/**
+ * Returns this.poolOptions for this pool
+ *
+ * @returns {object} pool options given
+ */
 RedisPool.prototype.getPoolOptions = function () {
   return this.poolOptions;
 };
 
+/**
+ * Returns size of the pool
+ *
+ * @returns {number} size of the pool
+ */
 RedisPool.prototype.getPoolSize = function () {
   return this.pool.size;
 };
 
+/**
+ * Returns available connections count of the pool
+ *
+ * @returns {number} available connections count of the pool
+ */
 RedisPool.prototype.availableObjectsCount = function () {
   return this.pool.available;
 };
 
-RedisPool.prototype.waitingClientsCount = function () {
+/**
+ * Returns pending connections count of the pool
+ *
+ * @returns {number} pending connections count of the pool
+ */
+RedisPool.prototype.pendingClientsCount = function () {
   return this.pool.pending;
 };
 
+/**
+ * Returns pool status and stats
+ *
+ * @returns {object} pool status and stats
+ */
 RedisPool.prototype.status = function () {
   return {
     name: this.name,
     size: this.pool.size,
     available: this.pool.available,
-    waiting: this.pool.pending
+    pending: this.pool.pending
   };
 };
 </code></pre>

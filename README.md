@@ -27,11 +27,11 @@ Redis pool ready to scale with node-pool support
     pool.acquire()
       .then(conn => {
 
-          // Do some work
+        // Do some work
 
-          // At the end release the conn back to the pool
-          pool.release(conn)
-        });
+        // At the end release the conn back to the pool
+        pool.release(conn)
+      });
 ```
 
 

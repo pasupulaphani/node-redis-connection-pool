@@ -59,13 +59,13 @@ describe("redisPool", () => {
 
       pool.availableObjectsCount().should.be.equal(poolOptions.min);
       pool.getPoolSize().should.be.equal(poolOptions.min);
-      pool.waitingClientsCount().should.be.equal(0);
+      pool.pendingClientsCount().should.be.equal(0);
 
       return pool.acquire()
         .then(client => {
           pool.availableObjectsCount().should.be.equal(poolOptions.min);
           pool.getPoolSize().should.be.equal(1);
-          pool.waitingClientsCount().should.be.equal(0);
+          pool.pendingClientsCount().should.be.equal(0);
           return pool.release(client);
         })
         .then(() => pool.availableObjectsCount().should.be.equal(1))
@@ -73,7 +73,7 @@ describe("redisPool", () => {
         .then(() => {
           pool.availableObjectsCount().should.be.equal(0);
           pool.getPoolSize().should.be.equal(1);
-          pool.waitingClientsCount().should.be.equal(0);
+          pool.pendingClientsCount().should.be.equal(0);
         })
         .then(() => {
           pool.acquire(); // this is hanging op so no return
@@ -82,7 +82,7 @@ describe("redisPool", () => {
         .then(() => {
           pool.availableObjectsCount().should.be.equal(0);
           pool.getPoolSize().should.be.equal(1);
-          pool.waitingClientsCount().should.be.equal(1);
+          pool.pendingClientsCount().should.be.equal(1);
         });
     });
 
@@ -128,7 +128,7 @@ describe("redisPool", () => {
 
       pool.availableObjectsCount().should.be.equal(poolOptions.min);
       pool.getPoolSize().should.be.equal(poolOptions.min);
-      pool.waitingClientsCount().should.be.equal(0);
+      pool.pendingClientsCount().should.be.equal(0);
 
       return pool.acquire()
         .then(client => {
@@ -153,7 +153,7 @@ describe("redisPool", () => {
 
       pool.availableObjectsCount().should.be.equal(poolOptions.min);
       pool.getPoolSize().should.be.equal(poolOptions.min);
-      pool.waitingClientsCount().should.be.equal(0);
+      pool.pendingClientsCount().should.be.equal(0);
 
       return pool.acquire()
         .then(client => {
@@ -179,7 +179,7 @@ describe("redisPool", () => {
 
       pool.availableObjectsCount().should.be.equal(poolOptions.min);
       pool.getPoolSize().should.be.equal(poolOptions.min);
-      pool.waitingClientsCount().should.be.equal(0);
+      pool.pendingClientsCount().should.be.equal(0);
 
       return pool.drain()
         .then(() => {
@@ -252,8 +252,8 @@ describe("redisPool", () => {
       const status = pool.status();
       status.name.should.be.equal(name);
       status.size.should.be.equal(poolOptions.min);
-      // status.avail.should.be.equal(poolOptions.min); // todo debug
-      status.waiting.should.be.equal(0);
+      status.available.should.be.equal(0);
+      status.pending.should.be.equal(0);
     });
   });
 });

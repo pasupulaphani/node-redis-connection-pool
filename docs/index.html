@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RedisPool.html">RedisPool</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RedisPool.html">RedisPool</a><ul class='methods'><li data-type='method'><a href="RedisPool.html#acquire">acquire</a></li><li data-type='method'><a href="RedisPool.html#availableObjectsCount">availableObjectsCount</a></li><li data-type='method'><a href="RedisPool.html#destroy">destroy</a></li><li data-type='method'><a href="RedisPool.html#drain">drain</a></li><li data-type='method'><a href="RedisPool.html#getName">getName</a></li><li data-type='method'><a href="RedisPool.html#getPoolOptions">getPoolOptions</a></li><li data-type='method'><a href="RedisPool.html#getPoolSize">getPoolSize</a></li><li data-type='method'><a href="RedisPool.html#getRedisOptions">getRedisOptions</a></li><li data-type='method'><a href="RedisPool.html#pendingClientsCount">pendingClientsCount</a></li><li data-type='method'><a href="RedisPool.html#release">release</a></li><li data-type='method'><a href="RedisPool.html#sendCommand">sendCommand</a></li><li data-type='method'><a href="RedisPool.html#status">status</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -59,11 +59,11 @@
     pool.acquire()
       .then(conn => {
 
-          // Do some work
+        // Do some work
 
-          // At the end release the conn back to the pool
-          pool.release(conn)
-        });</code></pre><h4>API</h4><ul>
+        // At the end release the conn back to the pool
+        pool.release(conn)
+      });</code></pre><h4>API</h4><ul>
 <li>RedisPool([options])</li>
 </ul>
 <h5><code>options</code> object properties</h5><table class="params">
@@ -78,7 +78,7 @@
     <tr>
       <td class="name"><code>name</code></td>
       <td class="type">
-        <span class="param-type">String</span>
+        <span class="param-type">string</span>
       </td>
       <td class="description last">
         <p>Name your pool</p>
@@ -87,7 +87,7 @@
     <tr>
       <td class="name"><code>redisOptions</code></td>
       <td class="type">
-        <span class="param-type">Object</span>
+        <span class="param-type">object</span>
       </td>
       <td class="description last">
         <p>opts from <a href="https://github.com/NodeRedis/node_redis#options-object-properties">node_redis#options-object-properties</a></p>
@@ -96,7 +96,7 @@
     <tr>
       <td class="name"><code>poolOptions</code></td>
       <td class="type">
-        <span class="param-type">Object</span>
+        <span class="param-type">object</span>
       </td>
       <td class="description last">
         <p>opts from <a href="https://github.com/coopernurse/node-pool#createpool">node-pool#createpool</a></p>
@@ -105,7 +105,7 @@
     <tr>
       <td class="name"><code>logger</code></td>
       <td class="type">
-        <span class="param-type">Object</span>
+        <span class="param-type">object</span>
       </td>
       <td class="description last">
         <p>Inject your custom logger</p>
