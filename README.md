@@ -5,7 +5,9 @@
 [![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg?style=flat-square)](https://gratipay.com/simple-redis-store/)
 
 # simple-redis-pool
+
 Redis pool ready to scale with node-pool support
+
 
 ## Prerequisites
 
@@ -13,8 +15,12 @@ Redis pool ready to scale with node-pool support
 
 ### Getting started
 
+```
     npm install simple-redis-pool
-
+```
+<br />
+#### Usage
+```
     var RedisPool = require("simple-redis-pool");
     var pool = new RedisPool();
 
@@ -26,12 +32,14 @@ Redis pool ready to scale with node-pool support
           // At the end release the conn back to the pool
           pool.release(conn)
         });
+```
+<br />
 
 #### API
 
 - RedisPool([options])
 
-#### `options` object properties
+##### `options` object properties
 
 | Property  | Default   | Description |
 |-----------|-----------|-------------|
@@ -50,13 +58,14 @@ Redis pool ready to scale with node-pool support
 
 ## Backers
 
-### Maintainers
+<br />
+#### Maintainers
 
 These amazing people are maintaining this project:
 
 *   [Phani](https://github.com/pasupulaphani) — [view contributions](https://github.com/pasupulaphani/simple-redis-pool/commits?author=pasupulaphani)
 
-### Sponsors
+#### Sponsors
 
 No sponsors yet! Will you be the first?
 
@@ -67,10 +76,14 @@ No sponsors yet! Will you be the first?
 <!-- [![Bitcoin donate button](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://phaninder.com/bitcoin "Donate once-off to this project using Bitcoin") -->
 <!-- [![Wishlist browse button](https://img.shields.io/badge/wishlist-donate-yellow.svg)](https://phaninder.com/wishlist "Buy an item on our wishlist for us") -->
 
-### Contributors
+#### Contributors
 
 These amazing people have contributed to/reviewed this project:
 
 *   [Oliver Brooks](https://github.com/oliverbrooks)
 
 [Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pasupulaphani/simple-redis-pool/blob/master/CONTRIBUTING.md)
+
+<br />
+
+---

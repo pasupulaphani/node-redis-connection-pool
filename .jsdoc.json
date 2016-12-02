@@ -14,7 +14,17 @@
   "templates": {
     "cleverLinks": false,
     "monospaceLinks": true,
-    "useLongnameInNav": false
+    "useLongnameInNav": false,
+    "systemName": "simple-redis-pool",
+    "analytics": {
+      "ua": "UA-57413413-3",
+      "domain": "pasupulaphani.github.io"
+    },
+    "syntaxTheme": "dark",
+    "inverseNav": true,
+    "copyright": "Copyright © 2016-2017",
+    "outputSourceFiles": true,
+    "outputSourcePath": true
   },
   "opts": {
     "destination": "./docs/",
@@ -22,6 +32,6 @@
     "private": true,
     "recurse": true,
     "verbose": true,
-    "template": "./node_modules/minami"
+    "template": "./node_modules/ink-docstrap/template"
   }
 }
