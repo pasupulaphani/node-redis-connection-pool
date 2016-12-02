@@ -17,10 +17,6 @@
     "default": {
       "outputSourceFiles": true,
       "includeDate": false
-    },
-    "analytics": {
-      "ua": "UA-57413413-3",
-      "domain": "pasupulaphani.github.io"
     }
   },
   "opts": {
