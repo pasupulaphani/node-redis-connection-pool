@@ -53,7 +53,7 @@ Redis pool ready to scale with node-pool support
     <tr>
       <td class="name"><code>name</code></td>
       <td class="type">
-        <span class="param-type">String</span>
+        <span class="param-type">string</span>
       </td>
       <td class="description last">
         <p>Name your pool</p>
@@ -62,7 +62,7 @@ Redis pool ready to scale with node-pool support
     <tr>
       <td class="name"><code>redisOptions</code></td>
       <td class="type">
-        <span class="param-type">Object</span>
+        <span class="param-type">object</span>
       </td>
       <td class="description last">
         <p>opts from <a href="https://github.com/NodeRedis/node_redis#options-object-properties">node_redis#options-object-properties</a></p>
@@ -71,7 +71,7 @@ Redis pool ready to scale with node-pool support
     <tr>
       <td class="name"><code>poolOptions</code></td>
       <td class="type">
-        <span class="param-type">Object</span>
+        <span class="param-type">object</span>
       </td>
       <td class="description last">
         <p>opts from <a href="https://github.com/coopernurse/node-pool#createpool">node-pool#createpool</a></p>
@@ -80,7 +80,7 @@ Redis pool ready to scale with node-pool support
     <tr>
       <td class="name"><code>logger</code></td>
       <td class="type">
-        <span class="param-type">Object</span>
+        <span class="param-type">object</span>
       </td>
       <td class="description last">
         <p>Inject your custom logger</p>

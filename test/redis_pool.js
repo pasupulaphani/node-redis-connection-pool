@@ -99,13 +99,18 @@ describe("redisPool", () => {
 
     it("should conn timeout fail acquire connection", () => {
       const poolOptions = {
+        min : 1,
         acquireTimeoutMillis: 1
       };
       const pool = new RedisPool(Object.assign({}, options, {
         poolOptions: poolOptions
       }));
 
-      return pool.acquire().should.be.rejectedWith(Error, { name: "TimeoutError" });
+      // make the conn is inuse
+      pool.acquire()
+        .then(conn => pool.release(conn));
+
+      pool.acquire().should.be.rejectedWith(Error, { name: "TimeoutError" });
     });
   });
 
