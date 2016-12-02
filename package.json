@@ -1,6 +1,6 @@
 {
   "name": "simple-redis-pool",
-  "version": "2.0.2",
+  "version": "2.0.4,
   "description": "Simplistic cache module that can scale",
   "main": "index.js",
   "repository": {
