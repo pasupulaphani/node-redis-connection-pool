@@ -117,7 +117,7 @@ No sponsors yet! Will you be the first?
 <!-- [![Bitcoin donate button](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://phaninder.com/bitcoin "Donate once-off to this project using Bitcoin") -->
 <!-- [![Wishlist browse button](https://img.shields.io/badge/wishlist-donate-yellow.svg)](https://phaninder.com/wishlist "Buy an item on our wishlist for us") -->
 
-### Contributors1
+### Contributors
 
 These amazing people have contributed to/reviewed this project:
 
