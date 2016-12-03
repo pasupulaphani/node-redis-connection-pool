@@ -33,7 +33,9 @@
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "docs:generate": "./node_modules/.bin/jsdoc -c .jsdoc.json",
     "docs:publish": "sh ./scripts/gh_deploy.sh",
-    "prepublish": "npm version patch && npm run docs:generate && npm run docs:publish"
+    "push:git" : "git push --tags origin HEAD:master",
+    "prepublishonly": "npm run docs:generate && npm run docs:publish",
+    "postpublishonly": "npm run push:git"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
