@@ -34,7 +34,7 @@
     "docs:generate": "./node_modules/.bin/jsdoc -c .jsdoc.json",
     "docs:publish": "sh ./scripts/gh_deploy.sh",
     "push:git" : "git push --tags origin HEAD:master",
-    "prepublishonly": "npm run docs:generate && npm run docs:publish",
+    "prepublishonly": "npm version patch && npm run docs:generate && npm run docs:publish",
     "postpublishonly": "npm run push:git"
   },
   "dependencies": {
