@@ -119,7 +119,7 @@ No sponsors yet! Will you be the first?
 
 ### Contributors
 
-These amazing people have contributed to/reviewed this project :
+These amazing people have contributed to/reviewed this project:
 
 *   [Oliver Brooks](https://github.com/oliverbrooks)
 
