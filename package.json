@@ -32,7 +32,7 @@
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "docs": "./node_modules/.bin/jsdoc -c .jsdoc.json",
-    "prepublish": "npm run docs && ./node_modules/.bin/npm-bump minor"
+    "prepublish": "npm run docs"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
