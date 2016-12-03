@@ -28,10 +28,11 @@
   ],
   "scripts": {
     "lint": "node_modules/.bin/eslint ./lib",
-    "test": "./node_modules/.bin/mocha --reporter spec && npm run lint && npm run docs",
+    "test": "./node_modules/.bin/mocha --reporter spec && npm run lint",
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "docs": "./node_modules/.bin/jsdoc -c .jsdoc.json"
+    "docs": "./node_modules/.bin/jsdoc -c .jsdoc.json",
+    "prepublish": "npm run docs && ./node_modules/.bin/npm-bump minor"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
