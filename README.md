@@ -4,7 +4,7 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c)
 [![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg?style=flat-square)](https://gratipay.com/simple-redis-store/)
 
-# simple-redis-pool ![https://github.com/pasupulaphani/simple-redis-pool](https://github.com/themes/tactile/images/octocat-icon.png)
+# simple-redis-pool [![View on Github](https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/pasupulaphani/simple-redis-pool)
 
 Redis pool ready to scale with node-pool support
 
