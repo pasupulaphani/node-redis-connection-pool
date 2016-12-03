@@ -31,9 +31,9 @@
     "test": "./node_modules/.bin/mocha --reporter spec && npm run lint",
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "docs": "./node_modules/.bin/jsdoc -c .jsdoc.json",
-    "publish-docs": "git add docs && git commit -m 'docs cmit prepublish' && sh ./scripts/gh_deploy.sh",
-    "prepublish": "npm run docs && npm run publish-docs"
+    "docs:generate": "./node_modules/.bin/jsdoc -c .jsdoc.json",
+    "docs:publish": "git add docs && git commit -m 'docs cmit prepublish' && sh ./scripts/gh_deploy.sh",
+    "prepublish": "npm run docs:generate && npm run docs:publish"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
