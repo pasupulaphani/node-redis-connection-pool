@@ -150,6 +150,21 @@ describe("redisPool", () => {
         })
         .then(() => pool.availableCount().should.be.equal(poolOptions.min));
     });
+
+    it("should release connection with invalid host", () => {
+      const redisOptions = Object.assign({}, options.redisOptions, {
+        host: "UNAVAILABLE_HOST"
+      });
+      const pool = new RedisPool(Object.assign({}, options, {
+        redisOptions: redisOptions
+      }));
+
+      return pool.acquire()
+        .catch(() => {
+          return pool.release()
+            .should.be.rejectedWith(/Resource not currently part of this pool/);
+        });
+    });
   });
 
   describe("destroy", () => {
