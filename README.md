@@ -20,10 +20,17 @@ Redis pool ready to scale with node-pool support
 ```
 
 #### Usage
+
+- Seemless execution of commands.
 ```
     var RedisPool = require("simple-redis-pool");
     var pool = new RedisPool();
 
+    pool.sendCommand("set", ["key", "value"])
+```
+
+- Want redis raw connection? you got it
+```
     pool.acquire()
       .then(conn => {
 
