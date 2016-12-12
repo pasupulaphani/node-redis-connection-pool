@@ -6,7 +6,7 @@
 
 # simple-redis-pool [![See on Github](https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/pasupulaphani/simple-redis-pool)
 
-Redis pool ready to scale with node-pool support
+Simplistic node redis pool ready can scale
 
 
 ## Prerequisites

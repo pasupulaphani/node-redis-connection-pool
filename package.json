@@ -1,7 +1,7 @@
 {
   "name": "simple-redis-pool",
   "version": "2.3.0",
-  "description": "Simplistic cache module that can scale",
+  "description": "Simplistic node redis pool ready can scale",
   "main": "index.js",
   "repository": {
     "type": "git",
