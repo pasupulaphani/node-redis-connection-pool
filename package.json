@@ -1,6 +1,6 @@
 {
   "name": "simple-redis-pool",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "Simplistic node redis pool ready can scale with generic-pool support",
   "main": "index.js",
   "repository": {
