@@ -284,4 +284,26 @@ describe("redisPool", () => {
       status.pending.should.be.equal(0);
     });
   });
+
+  describe("sendCommand", () => {
+
+    const key = "MyNameIs";
+    const value = "RealSlimShady";
+    const pool = new RedisPool(options);
+
+    beforeEach(() => pool.sendCommand("del", "*"));
+
+    it("should execute given command", () => {
+
+      return pool.sendCommand("set", [key, value])
+        .then(() => pool.sendCommand("get", [key]))
+        .should.eventually.be.equal(value);
+    });
+
+    it("should reject when cmd failed", () => {
+
+      return pool.sendCommand("keys")
+        .should.be.rejectedWith(/ERR wrong number of arguments for 'keys' command/);
+    });
+  });
 });
