@@ -1,4 +1,4 @@
-[![npm version](http://img.shields.io/npm/v/simple-redis-pool.svg?style=flat-square)](https://npmjs.org/package/simple-redis-pool)
+[![npm version](https://img.shields.io/npm/v/simple-redis-pool.svg?style=flat-square)](https://npmjs.org/package/simple-redis-pool)
 [![Build Status](https://travis-ci.org/pasupulaphani/simple-redis-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/simple-redis-pool)
 [![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/simple-redis-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/simple-redis-pool?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c)
