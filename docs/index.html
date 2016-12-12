@@ -53,17 +53,23 @@
 <a href="https://gratipay.com/simple-redis-store/"><img src="https://img.shields.io/badge/gratipay-donate-yellow.svg?style=flat-square" alt="Gratipay donate button"></a></p>
 <h1>simple-redis-pool <a href="https://github.com/pasupulaphani/simple-redis-pool"><img src="https://github.com/themes/tactile/images/octocat-icon.png" alt="See on Github"></a></h1><p>Redis pool ready to scale with node-pool support</p>
 <h2>Prerequisites</h2><p><code>node &gt;= 4</code> This module requires nodejs v4 or above as it has dependencies on es6 components such as Map, Set, Promise etc.</p>
-<h3>Getting started</h3><pre class="prettyprint source"><code>    npm install simple-redis-pool</code></pre><h4>Usage</h4><pre class="prettyprint source"><code>    var RedisPool = require(&quot;simple-redis-pool&quot;);
-    var pool = new RedisPool();
+<h3>Getting started</h3><pre class="prettyprint source"><code>    npm install simple-redis-pool</code></pre><h4>Usage</h4><ul>
+<li><p>Seemless execution of commands.</p>
+<pre class="prettyprint source"><code>  var RedisPool = require(&quot;simple-redis-pool&quot;);
+  var pool = new RedisPool();
 
-    pool.acquire()
-      .then(conn => {
+  pool.sendCommand(&quot;set&quot;, [&quot;key&quot;, &quot;value&quot;])</code></pre></li>
+<li><p>Want redis raw connection? you got it</p>
+<pre class="prettyprint source"><code>  pool.acquire()
+    .then(conn => {
 
-        // Do some work
+      // Do some work
 
-        // At the end release the conn back to the pool
-        pool.release(conn)
-      });</code></pre><h4>API</h4><ul>
+      // At the end release the conn back to the pool
+      pool.release(conn)
+    });</code></pre></li>
+</ul>
+<h4>API</h4><ul>
 <li>RedisPool([options])</li>
 </ul>
 <h5><code>options</code> object properties</h5><table class="params">
