@@ -1,6 +1,6 @@
 {
   "name": "node-redis-connection-pool",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "description": "Simplistic node redis connection pool ready can scale with generic-pool support",
   "main": "index.js",
   "repository": {
