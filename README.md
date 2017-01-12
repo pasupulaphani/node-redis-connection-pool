@@ -1,12 +1,12 @@
 [![npm version](https://img.shields.io/npm/v/node-redis-connection-pool.svg?style=flat-square)](https://npmjs.org/package/node-redis-connection-pool)
 [![Build Status](https://travis-ci.org/pasupulaphani/node-redis-connection-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/node-redis-connection-pool)
 [![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/node-redis-connection-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/node-redis-connection-pool?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c)
+[![Dependency Status](https://www.versioneye.com/user/projects/58780c851fe8e3003e7a83b2/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58780c851fe8e3003e7a83b2)
 [![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg?style=flat-square)](https://gratipay.com/simple-redis-store/)
 
 # node-redis-connection-pool [![See on Github](https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/pasupulaphani/node-redis-connection-pool)
 
-Simplistic node redis pool ready can scale with generic-pool support
+Simplistic node redis connection pool ready can scale with generic-pool support
 
 
 ## Prerequisites
