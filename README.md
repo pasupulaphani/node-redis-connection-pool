@@ -1,10 +1,10 @@
-[![npm version](https://img.shields.io/npm/v/simple-redis-pool.svg?style=flat-square)](https://npmjs.org/package/simple-redis-pool)
-[![Build Status](https://travis-ci.org/pasupulaphani/simple-redis-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/simple-redis-pool)
-[![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/simple-redis-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/simple-redis-pool?branch=master)
+[![npm version](https://img.shields.io/npm/v/node-redis-connection-pool.svg?style=flat-square)](https://npmjs.org/package/node-redis-connection-pool)
+[![Build Status](https://travis-ci.org/pasupulaphani/node-redis-connection-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/node-redis-connection-pool)
+[![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/node-redis-connection-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/node-redis-connection-pool?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/583c0c58d2d44d004530834c)
 [![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg?style=flat-square)](https://gratipay.com/simple-redis-store/)
 
-# simple-redis-pool [![See on Github](https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/pasupulaphani/simple-redis-pool)
+# node-redis-connection-pool [![See on Github](https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/pasupulaphani/node-redis-connection-pool)
 
 Simplistic node redis pool ready can scale with generic-pool support
 
@@ -16,14 +16,14 @@ Simplistic node redis pool ready can scale with generic-pool support
 ### Getting started
 
 ```
-    npm install simple-redis-pool
+    npm install node-redis-connection-pool
 ```
 
 #### Usage
 
 - Seemless execution of commands.
 ```
-    var RedisPool = require("simple-redis-pool");
+    var RedisPool = require("node-redis-connection-pool");
     var pool = new RedisPool();
 
     pool.sendCommand("set", ["key", "value"])
@@ -103,7 +103,7 @@ Simplistic node redis pool ready can scale with generic-pool support
 
 ## Contribute
 
-[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pasupulaphani/simple-redis-pool/blob/master/CONTRIBUTING.md)
+[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pasupulaphani/node-redis-connection-pool/blob/master/CONTRIBUTING.md)
 
 ## Backers
 
@@ -111,7 +111,7 @@ Simplistic node redis pool ready can scale with generic-pool support
 
 These amazing people are maintaining this project:
 
-*   [Phani](https://github.com/pasupulaphani) — [view contributions](https://github.com/pasupulaphani/simple-redis-pool/commits?author=pasupulaphani)
+*   [Phani](https://github.com/pasupulaphani) — [view contributions](https://github.com/pasupulaphani/node-redis-connection-pool/commits?author=pasupulaphani)
 
 ### Sponsors
 
@@ -130,7 +130,7 @@ These amazing people have contributed to/reviewed this project:
 
 *   [Oliver Brooks](https://github.com/oliverbrooks)
 
-[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pasupulaphani/simple-redis-pool/blob/master/CONTRIBUTING.md)
+[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pasupulaphani/node-redis-connection-pool/blob/master/CONTRIBUTING.md)
 
 <br />
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-57413413-3', 'auto');ga('send', 'pageview');</script>

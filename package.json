@@ -1,19 +1,19 @@
 {
-  "name": "simple-redis-pool",
+  "name": "node-redis-connection-pool",
   "version": "2.7.0",
   "description": "Simplistic node redis pool ready can scale with generic-pool support",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/pasupulaphani/simple-redis-pool.git"
+    "url": "git+ssh://git@github.com/pasupulaphani/node-redis-connection-pool.git"
   },
   "engines": {
     "node": ">=4"
   },
   "bugs": {
-    "url": "https://github.com/pasupulaphani/simple-redis-pool/issues"
+    "url": "https://github.com/pasupulaphani/node-redis-connection-pool/issues"
   },
-  "homepage": "https://github.com/pasupulaphani/simple-redis-pool#readme",
+  "homepage": "https://github.com/pasupulaphani/node-redis-connection-pool#readme",
   "directories": {
     "test": "test"
   },
