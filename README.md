@@ -1,4 +1,4 @@
-[![npm version](https://img.shields.io/npm/v/node-redis-connection-pool.svg?style=flat-square)](https://npmjs.org/package/node-redis-connection-pool)
+[![npm version](https://badge.fury.io/js/node-redis-connection-pool.svg)](https://badge.fury.io/js/node-redis-connection-pool)
 [![Build Status](https://travis-ci.org/pasupulaphani/node-redis-connection-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/node-redis-connection-pool)
 [![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/node-redis-connection-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/node-redis-connection-pool?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/58780c851fe8e3003e7a83b2/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58780c851fe8e3003e7a83b2)
