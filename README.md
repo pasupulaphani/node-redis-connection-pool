@@ -1,7 +1,6 @@
 [![npm version](https://badge.fury.io/js/node-redis-connection-pool.svg)](https://badge.fury.io/js/node-redis-connection-pool)
 [![Build Status](https://travis-ci.org/pasupulaphani/node-redis-connection-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/node-redis-connection-pool)
 [![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/node-redis-connection-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/node-redis-connection-pool?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/58780c851fe8e3003e7a83b2/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58780c851fe8e3003e7a83b2)
 [![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg?style=flat-square)](https://gratipay.com/simple-redis-store/)
 
 # node-redis-connection-pool [![See on Github](https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/pasupulaphani/node-redis-connection-pool)
@@ -133,6 +132,3 @@ These amazing people have contributed to/reviewed this project:
 
 [Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pasupulaphani/node-redis-connection-pool/blob/master/CONTRIBUTING.md)
 
-<br />
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-57413413-3', 'auto');ga('send', 'pageview');</script>
----
