@@ -1,8 +1,9 @@
 {
   "name": "node-redis-connection-pool",
-  "version": "2.10.0",
+  "version": "2.10.1",
   "description": "Simplistic node redis connection pool ready can scale with generic-pool support",
   "main": "index.js",
+  "types": "index.d.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/pasupulaphani/node-redis-connection-pool.git"
@@ -52,6 +53,8 @@
     "retry-as-promised": "^2.3.2"
   },
   "devDependencies": {
+    "@types/generic-pool": "^3.1.9",
+    "@types/redis": "^2.8.17",
     "bluebird": "^3.5.1",
     "coveralls": "^2.11.15",
     "docdash": "^0.4.0",
