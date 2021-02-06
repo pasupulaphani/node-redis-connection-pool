@@ -1,4 +1,4 @@
 # Change Log
 
-**2.10.1**  
-types definition was added
+**2.11.0**  
+move to typescript

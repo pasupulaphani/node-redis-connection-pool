@@ -1,16 +1,20 @@
 [![npm version](https://badge.fury.io/js/node-redis-connection-pool.svg)](https://badge.fury.io/js/node-redis-connection-pool)
 [![Build Status](https://travis-ci.org/pasupulaphani/node-redis-connection-pool.svg?branch=master)](https://travis-ci.org/pasupulaphani/node-redis-connection-pool)
 [![Coverage Status](https://coveralls.io/repos/github/pasupulaphani/node-redis-connection-pool/badge.svg?branch=master)](https://coveralls.io/github/pasupulaphani/node-redis-connection-pool?branch=master)
-[![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg?style=flat-square)](https://gratipay.com/simple-redis-store/)
+[![Patreon donate button](https://img.shields.io/badge/patreon-donate-yellow.svg)](http://patreon.com/phaninder 'Donate to this project using Patreon')
 
 # node-redis-connection-pool [![See on Github](https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/pasupulaphani/node-redis-connection-pool)
 
 Simplistic node redis connection pool ready can scale with generic-pool support
 
+### Documentation
+
+- [TSDOC pages](https://pasupulaphani.github.io/node-redis-connection-pool/index.html)
 
 ## Prerequisites
 
-```node >= 4``` This module requires nodejs v4 or above as it has dependencies on es6 components such as Map, Set, Promise etc.
+- `node >= 8` This module requires nodejs v8 or later
+- `redis >= 4` This module requires redis v4 or above as it has dependencies on `UNLINK` and `redis.replicate_commands()` for pattern deletion.
 
 ### Getting started
 
@@ -21,6 +25,7 @@ Simplistic node redis connection pool ready can scale with generic-pool support
 #### Usage
 
 - Seemless execution of commands.
+
 ```
     var RedisPool = require("node-redis-connection-pool");
     var pool = new RedisPool();
@@ -29,6 +34,7 @@ Simplistic node redis connection pool ready can scale with generic-pool support
 ```
 
 - Want redis raw connection? you got it
+
 ```
     pool.acquire()
       .then(conn => {
@@ -39,7 +45,6 @@ Simplistic node redis connection pool ready can scale with generic-pool support
         pool.release(conn)
       });
 ```
-
 
 #### API
 
@@ -95,7 +100,6 @@ Simplistic node redis connection pool ready can scale with generic-pool support
   </tbody>
 </table>
 
-
 ### Run tests
 
     bash test.sh
@@ -110,25 +114,23 @@ Simplistic node redis connection pool ready can scale with generic-pool support
 
 These amazing people are maintaining this project:
 
-*   [Phani](https://github.com/pasupulaphani) — [view contributions](https://github.com/pasupulaphani/node-redis-connection-pool/commits?author=pasupulaphani)
+- [Phani](https://github.com/pasupulaphani) — [view contributions](https://github.com/pasupulaphani/node-redis-connection-pool/commits?author=pasupulaphani)
 
 ### Sponsors
 
 No sponsors yet! Will you be the first?
 
-[![Patreon donate button](https://img.shields.io/badge/patreon-donate-yellow.svg)](http://patreon.com/phaninder "Donate to this project using Patreon")
-[![Gratipay donate button](https://img.shields.io/badge/gratipay-donate-yellow.svg)](https://gratipay.com/~pasupulaphani/ "Donate weekly to this project using Gratipay")
-[![Flattr donate button](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/pasupulaphani "Donate to this project using Flattr")
+[![Patreon donate button](https://img.shields.io/badge/patreon-donate-yellow.svg)](http://patreon.com/phaninder 'Donate to this project using Patreon')
+[![Flattr donate button](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/pasupulaphani 'Donate to this project using Flattr')
+
 <!-- [![PayPal donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://phaninder.com/paypal "Donate to this project using Paypal") -->
 <!-- [![Bitcoin donate button](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://phaninder.com/bitcoin "Donate once-off to this project using Bitcoin") -->
 <!-- [![Wishlist browse button](https://img.shields.io/badge/wishlist-donate-yellow.svg)](https://phaninder.com/wishlist "Buy an item on our wishlist for us") -->
-<a href='https://pledgie.com/campaigns/33095'><img alt='Click here to lend your support to: simple-node-redis-cache and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/33095.png?skin_name=chrome' border='0' ></a>
 
 ### Contributors
 
 These amazing people have contributed to/reviewed this project:
 
-*   [Oliver Brooks](https://github.com/oliverbrooks)
+- [Oliver Brooks](https://github.com/oliverbrooks)
 
 [Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pasupulaphani/node-redis-connection-pool/blob/master/CONTRIBUTING.md)
-
